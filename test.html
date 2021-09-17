@@ -35,8 +35,8 @@
 <meta property="og:image" content="http://example.com/images/pics_coachoutlet/ABBY%20SHOULDER%20BAG%20WITH%20VARSITY%20STRIPE.jpg">
 <meta property="og:image" content="http://example.com/images/pics_coachoutlet/ABBY%20SHOULDER%20BAG%20WITH%20VARSITY%20STRIPE.jpg">
 <meta property="og:image" content="http://example.com/images/pics_coachoutlet/ABBY%20SHOULDER%20BAG%20WITH%20VARSITY%20STRIPE.jpg">
-<meta property="article:published_time" content="2021-08-23T14:48:48.248Z">
-<meta property="article:modified_time" content="2021-08-23T14:48:48.248Z">
+<meta property="article:published_time" content="2021-09-17T13:24:06.317Z">
+<meta property="article:modified_time" content="2021-09-17T13:24:06.317Z">
 <meta property="article:author" content="c小蕾子">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://example.com/images/pics_coachoutlet/ABBY%20SHOULDER%20BAG%20WITH%20VARSITY%20STRIPE.jpg">
@@ -351,16 +351,21 @@ div.desc {
   var nick_name = UrlParm.parm("name");
   var info = eval(nick_name);
 
-  document.getElementById("h3").innerHTML = info["sellName"]+"<br>" + info["sellPrice"];
+  document.getElementById("h3").innerHTML = info["SellName"]+"<br>" 
+  
+  if(info["SetDescription"] != ""){
+    document.getElementById("h3").innerHTML = document.getElementById("h3").innerHTML + info["SetDescription"] + "<br>" ;
+  }
+  document.getElementById("h3").innerHTML = document.getElementById("h3").innerHTML + " &#x1F4B0;"+info["SellPrice"] + "<br>" ;
 
   // document.write(info["sellName"]+"<br>");
   // document.write(info["sellPrice"]);
 
 
-  for (var i=0;i<info.pics.length;i++)
+  for (var i=0;i<info.Pics.length;i++)
   { 
-      document.getElementById("a" + i).href="\\images\\recent" + "\\" + nick_name + "\\" + info.pics[i];
-      document.getElementById("img" + i).src="\\images\\recent" + "\\" + nick_name + "\\" + info.pics[i];
+      document.getElementById("a" + i).href="\\images\\recent" + "\\" + nick_name + "\\" + info.Pics[i];
+      document.getElementById("img" + i).src="\\images\\recent" + "\\" + nick_name + "\\" + info.Pics[i];
 
       // var div = document.createElement("div");
       // div.class = "responsive";
@@ -382,8 +387,9 @@ div.desc {
       // img.height = "400";
       // linkA.appendChild(img);
   }
-  for (var i = 0; i < 9 - info.pics.length; i++) {
-    document.getElementById("div" + i).display = none;
+  for (var i = 0; i < 9 - info.Pics.length; i++) {
+    document.getElementById("div" + (i + info.Pics.length)).style.display = "none";
+    //document.getElementById("div" + i + info.Pics.length).visibility = hidden;
   }
 
 
