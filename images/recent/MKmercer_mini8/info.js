@@ -1,5 +1,5 @@
-var MKmercer_mini6 = {
-    "No": "6",
+var MKmercer_mini8 = {
+    "No": "8",
     "TopCategory": "包包包包",
     "Brand": "MK",
     "NickName": "MKmercermini墨绿",
